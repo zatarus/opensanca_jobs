@@ -24,5 +24,5 @@ ENV PATH="$PATH:/opt/yarn/bin" BUNDLE_PATH="/gems" BUNDLE_JOBS=2 RAILS_ENV=${rai
 COPY . /var/app
 WORKDIR /var/app
 
-# RUN bundle install --full-index && yarn && bundle exec rake assets:precompile
+RUN bundle install --full-index && yarn && bundle exec rake assets:precompile
 CMD rails s -b 0.0.0.0
